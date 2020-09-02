@@ -8,7 +8,7 @@
 <body>
   <header>
     <h1>{{article_info.title}}</h1>
-    <div>{{article_info.points}} points | By: {{article_info.author}} | <a href="{{article_info.url}}">{{article_info.url}}</a> </div> 
+    <div>{{article_info.points}} points | By: {{article_info.author}} | <a href="{{article_info.url}}" target="_blank">{{article_info.url}}</a> </div> 
   </header>
   <main>
     {% for data in comments %}
@@ -24,7 +24,6 @@
       </div>
       <hr>
     {% endfor %}
-    
   </main>
 </body>
 
