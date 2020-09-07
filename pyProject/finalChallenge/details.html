@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://unpkg.com/mvp.css">
+    <title> Job Search </title>
+    <style>
+      section {
+        display:grid;
+        gap: 20px;
+        grid-template-columns: repeat(3, 1fr);
+      }
+      body {
+        background-color: #85C1E9;
+      }
+      header {
+        color: white;
+        margin-bottom: 0;
+      }
+      label {
+        color: #2471A3;
+      } 
+      main {
+          padding-top: 0;
+        }
+      section h3 {
+        color: #F9F90B;
+      }
+      section h4 {
+        color: white;
+      }
+      small {
+        color: white;
+      }
+      hr {
+        margin: 2rem 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+    <h1>✨ SEARCH RESULTS ✨</h1>
+    <h3>🔍 FOUND {{results_num}} JOBS FOR:  {{searchingBy}} 🔍</h3>
+    <a href="/goExport?word={{searchingBy}}">📃 EXPORT TO CSV 📃</a><br><br>
+    <a href="/"> 🔙 GO BACK 🔙</a>
+    </header>
+    <main>
+      <hr>
+      <header>
+        <h2>YOU CAN APPLY THESE JOBS!</h2>
+      </header>
+      <section>
+        {% for job in jobsList %}
+        <aside>
+          <h3>{{job.title}}</h3>
+          <h4>{{job.company}}</h4>
+          <p>
+            <a href="{{job.link}}" target="_blank"><b>Apply</b></a>
+          </p>
+        </aside>  
+        {% endfor %}
+      <section>
+    </main>  
+  </body>
+</html>     
